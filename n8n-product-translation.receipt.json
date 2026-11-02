@@ -1,0 +1,38 @@
+{
+  "slug": "product-translation",
+  "testedAt": "2026-10-27T18:33:50.836349+00:00",
+  "runtime": "n8nio/n8n:2.16.0",
+  "exitCode": 0,
+  "elapsedSeconds": 11.649,
+  "httpStatus": 200,
+  "requestedModel": "gemini-2.5-flash-lite",
+  "returnedModel": "gemini-2.5-flash-lite",
+  "finishReason": "stop",
+  "usage": {
+    "prompt_tokens": 209,
+    "completion_tokens": 114,
+    "total_tokens": 323,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 209,
+      "audio_tokens": 0,
+      "image_tokens": 0
+    },
+    "completion_tokens_details": {
+      "text_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0
+    }
+  },
+  "workflowSha256": "e987a71c97cb858bad3ba11975a54629c683e115de690a2f18b63ca3d7b7adb3",
+  "requestCount": 1,
+  "videoModelCalls": 0,
+  "nativeNodes": [
+    "n8n-nodes-base.manualTrigger",
+    "n8n-nodes-base.set",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.convertToFile"
+  ]
+}

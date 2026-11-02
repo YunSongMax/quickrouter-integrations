@@ -1,0 +1,25 @@
+{
+  "testedAt": "2026-11-02T07:07:42.442243+00:00",
+  "client": "Open WebUI",
+  "version": "0.12.5-slim",
+  "imageDigest": "sha256:9a4db3e6c8d6174d4ed8952304115e90dcc36e9a8b98c2f8984eab321f29505e",
+  "endpoint": "https://api.quickrouter.ai/v1",
+  "requestedModel": "gpt-4o-mini",
+  "nativeUiTests": 2,
+  "responses": [
+    {
+      "model": "gpt-4o-mini",
+      "text": "QR_OK",
+      "usage": null,
+      "usageNote": "Client saved incomplete usage; no token-count claim."
+    },
+    {
+      "model": "gpt-4o-mini",
+      "text": "```json\n{\n  \"category\": \"billing\"\n}\n```",
+      "usage": null,
+      "usageNote": "Client saved incomplete usage; no token-count claim."
+    }
+  ],
+  "videoModelCalls": 0,
+  "scope": "Text chat and Chinese classification only. RAG, vision, tools, voice and video untested."
+}

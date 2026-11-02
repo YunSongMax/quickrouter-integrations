@@ -1,0 +1,20 @@
+[
+  {
+    "sku": "BOTTLE-500",
+    "brand": "Aurora",
+    "price": "12.50",
+    "target_language": "English",
+    "translated_title": "Aurora 500 ml Travel Tumbler",
+    "translated_description": "Aurora Travel Tumbler, 500 ml capacity, blue. Hand-wash only.",
+    "review_required": true
+  },
+  {
+    "sku": "CABLE-2M",
+    "brand": "Northline",
+    "price": "8.00",
+    "target_language": "English",
+    "translated_title": "Northline 2 m USB-C Cable",
+    "translated_description": "Northline USB-C Cable, 2 m length, black. Charger not included.",
+    "review_required": true
+  }
+]

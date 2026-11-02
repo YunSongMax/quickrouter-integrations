@@ -1,0 +1,3 @@
+﻿invoice_id,currency,sku,quantity,unit_price,line_total,review_required
+INV-DEMO-28,USD,PEN-BLUE,3,2.50,7.50,TRUE
+INV-DEMO-28,USD,BOOK-A5,2,4.00,8.00,TRUE

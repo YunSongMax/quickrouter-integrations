@@ -1,0 +1,26 @@
+{
+  "testedAt": "2026-11-02T07:12:58.603335+00:00",
+  "client": "LibreChat",
+  "version": "v0.8.9-rc1",
+  "imageDigest": "sha256:9625652b9d9ac9fbf9ff3505fc34770f822c7aa079f58d06b4e66eed2dc93aeb",
+  "endpoint": "https://api.quickrouter.ai/v1",
+  "requestedModel": "gpt-4o-mini",
+  "nativeUiTests": 2,
+  "responses": [
+    {
+      "text": "QR_OK",
+      "model": "gpt-4o-mini",
+      "clientTokenCount": 6
+    },
+    {
+      "text": "```json\n{\n  \"category\": \"billing\"\n}\n```",
+      "model": "gpt-4o-mini",
+      "clientTokenCount": 17
+    }
+  ],
+  "usageNote": "Client tokenCount is not a verified gateway billing receipt.",
+  "maxOutputTokens": 128,
+  "automaticTitles": false,
+  "videoModelCalls": 0,
+  "scope": "Text chat and Chinese classification only. RAG, vision, tools, voice and video untested."
+}

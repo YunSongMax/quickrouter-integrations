@@ -1,0 +1,4 @@
+﻿ticket_id,category,priority,summary,review_required
+T-101,billing,normal,The user was charged twice and requested an investigation.,TRUE
+T-102,technical,high,The production service is down and failing all connection requests.,TRUE
+T-103,account,normal,The user is unable to sign in following a password reset.,TRUE

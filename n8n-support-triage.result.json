@@ -1,0 +1,23 @@
+[
+  {
+    "ticket_id": "T-101",
+    "category": "billing",
+    "priority": "normal",
+    "summary": "The user was charged twice and requested an investigation.",
+    "review_required": true
+  },
+  {
+    "ticket_id": "T-102",
+    "category": "technical",
+    "priority": "high",
+    "summary": "The production service is down and failing all connection requests.",
+    "review_required": true
+  },
+  {
+    "ticket_id": "T-103",
+    "category": "account",
+    "priority": "normal",
+    "summary": "The user is unable to sign in following a password reset.",
+    "review_required": true
+  }
+]

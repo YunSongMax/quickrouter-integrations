@@ -1,0 +1,14 @@
+version: 1.3.17
+cache: false
+endpoints:
+  custom:
+    - name: QuickRouter
+      apiKey: '${QUICKROUTER_API_KEY}'
+      baseURL: https://api.quickrouter.ai/v1
+      models:
+        default: [gpt-4o-mini]
+        fetch: false
+      titleConvo: false
+      modelDisplayLabel: QuickRouter
+      addParams:
+        max_tokens: 128

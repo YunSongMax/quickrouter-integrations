@@ -1,0 +1,40 @@
+{
+  "slug": "support-triage",
+  "testedAt": "2026-10-27T18:30:19.351948+00:00",
+  "runtime": "n8nio/n8n:2.16.0",
+  "exitCode": 0,
+  "elapsedSeconds": 14.322,
+  "httpStatus": 200,
+  "requestedModel": "gemini-2.5-flash-lite",
+  "returnedModel": "gemini-2.5-flash-lite",
+  "finishReason": "stop",
+  "usage": {
+    "prompt_tokens": 146,
+    "completion_tokens": 93,
+    "total_tokens": 239,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "audio_tokens": 0,
+      "image_tokens": 0
+    },
+    "completion_tokens_details": {
+      "text_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0
+    }
+  },
+  "workflowSha256": "103fadcdbd9ec559f5a29f7de73f63a422e8f44562fc498fbfcb63d97af7bf53",
+  "requestCount": 1,
+  "videoModelCalls": 0,
+  "nativeNodes": [
+    "n8n-nodes-base.manualTrigger",
+    "n8n-nodes-base.set",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.convertToFile"
+  ],
+  "csvRetrieval": "Re-executed native CSV export from the cached real HTTP response; zero additional API calls.",
+  "csvRetrievedAt": "2026-10-27T18:32:46.124644+00:00"
+}
