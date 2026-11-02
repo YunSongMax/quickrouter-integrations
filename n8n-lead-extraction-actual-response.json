@@ -1,0 +1,49 @@
+{
+  "id": "chatcmpl-EfmphKq6N3Hb8t4oZwOZ4nIhvE1cN",
+  "object": "chat.completion",
+  "created": 1793627869,
+  "model": "gpt-4o-mini",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"rows\":[{\"id\":\"L01\",\"公司\":\"示例公司甲\",\"人数\":8,\"预算\":null,\"缺项\":[\"预算\"],\"跟进草稿\":\"中文内部草稿\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 132,
+    "completion_tokens": 41,
+    "total_tokens": 173,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 11,
+      "engine_ttft_ms": 27,
+      "engine_ttlt_ms": 494,
+      "pre_inference_ms": 63,
+      "service_tbt_ms": 11,
+      "service_ttft_ms": 490,
+      "service_ttlt_ms": 952,
+      "user_visible_ttft_ms": 427
+    }
+  },
+  "system_fingerprint": "fp_4b2adf74ff",
+  "routing": {
+    "serving_pipereplica": "d20261029104909-e8c8a8c2-default-r5-dp0-default"
+  },
+  "service_tier": "default"
+}

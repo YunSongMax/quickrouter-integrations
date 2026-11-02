@@ -1,0 +1,22 @@
+{
+  "testedAt": "2026-11-02T14:16:56.206866+00:00",
+  "client": "AnythingLLM",
+  "version": "1.19.0",
+  "imageDigest": "sha256:daf5a6ae9d363ed578e7d41e2d0668c7eaa604bd90b0ff27435f893b0906833e",
+  "provider": "Generic OpenAI",
+  "baseUrl": "https://api.quickrouter.ai/v1",
+  "model": "gpt-4o-mini",
+  "contextWindow": 4096,
+  "maxOutputTokens": 256,
+  "chatMode": "chat",
+  "streaming": false,
+  "emptyDocumentWorkspace": true,
+  "nativeClientReportedTokens": 274,
+  "successfulPrompts": 2,
+  "checks": {
+    "exactSmokeReply": true,
+    "chineseJsonCategoryBilling": true
+  },
+  "videoModelCalls": 0,
+  "scope": "Native UI ordinary text chat; no RAG, embeddings, agent tools, images, audio or video verified. An initial automatic-agent attempt did not complete and was stopped; it is not a passed Agent test."
+}

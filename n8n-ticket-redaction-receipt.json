@@ -1,0 +1,41 @@
+{
+  "testedAt": "2026-11-02T13:57:43.355108+00:00",
+  "runtime": "n8nio/n8n:2.16.0",
+  "workflowSha256": "b77a45e5676b7e0ecf53d788f3c0d61243db4be262dc75ce4e94752c00f99b87",
+  "nativeCliExitCode": 0,
+  "httpStatus": 200,
+  "model": "gpt-4o-mini-2024-07-18",
+  "requestedModel": "gpt-4o-mini",
+  "finishReason": "stop",
+  "usage": {
+    "prompt_tokens": 109,
+    "completion_tokens": 26,
+    "total_tokens": 135,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "service_ttft_ms": 397,
+      "user_visible_ttft_ms": 322,
+      "pre_inference_ms": 75,
+      "service_tbt_ms": 13,
+      "service_ttlt_ms": 744,
+      "engine_ttft_ms": 27,
+      "engine_ttlt_ms": 369,
+      "engine_tbt_ms": 13
+    }
+  },
+  "requestCount": 1,
+  "rows": 1,
+  "videoModelCalls": 0,
+  "syntheticInput": true,
+  "humanReviewRequired": true,
+  "requestId": "20261102215737962279909I5XfDUZd"
+}

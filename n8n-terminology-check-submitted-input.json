@@ -1,0 +1,14 @@
+[
+  {
+    "id": "G01",
+    "text": "请打开 Quick Route 控制台。",
+    "required": "QuickRouter",
+    "forbidden": "Quick Route"
+  },
+  {
+    "id": "G02",
+    "text": "Open the QuickRouter console.",
+    "required": "QuickRouter",
+    "forbidden": "Quick Route"
+  }
+]

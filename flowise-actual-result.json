@@ -1,0 +1,22 @@
+[
+  {
+    "role": "userMessage",
+    "content": "接入测试：只回复 QR_OK，不要添加其他内容。",
+    "createdDate": "2026-11-02T15:11:24.025"
+  },
+  {
+    "role": "apiMessage",
+    "content": "QR_OK",
+    "createdDate": "2026-11-02T15:11:30.049"
+  },
+  {
+    "role": "userMessage",
+    "content": "只输出一个 JSON 对象，包含 category 和 summary。category 只能是 billing、bug、feature；summary 用中文，不超过 30 字。合成工单：测试订单发生重复扣款，请核对账单。",
+    "createdDate": "2026-11-02T15:11:42.111"
+  },
+  {
+    "role": "apiMessage",
+    "content": "{\n  \"category\": \"billing\",\n  \"summary\": \"测试订单重复扣款，请核对账单。\"\n}",
+    "createdDate": "2026-11-02T15:11:47.309"
+  }
+]

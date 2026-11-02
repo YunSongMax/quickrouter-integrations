@@ -1,0 +1,21 @@
+{
+  "testedAt": "2026-11-02T15:12:12.786891+00:00",
+  "client": "Flowise",
+  "version": "3.1.4",
+  "imageDigest": "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
+  "database": "PostgreSQL 17, isolated test database",
+  "baseUrl": "https://api.quickrouter.ai/v1",
+  "model": "gpt-4o-mini",
+  "maxOutputTokens": 256,
+  "streaming": false,
+  "successfulPrompts": 2,
+  "checks": {
+    "exactSmokeReply": true,
+    "chineseJsonCategoryBilling": true
+  },
+  "usage": null,
+  "usageNote": "Native chat_message records do not expose token usage; do not estimate consumption from output length.",
+  "workflowSha256": "0f0aed7a4e7610b6e4da0b6fd2994a824a2b62d9f0b34c5a4a76cabf650119ff",
+  "videoModelCalls": 0,
+  "scope": "Native UI LLM Chain text only. No Agent tools, RAG, embeddings, media or production reliability verification. Official project sunset notice applies."
+}

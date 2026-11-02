@@ -1,0 +1,49 @@
+{
+  "id": "chatcmpl-Efmprp7fWeHaYyvoipmrFpk2LUNEB",
+  "object": "chat.completion",
+  "created": 1793627879,
+  "model": "gpt-4o-mini-2024-07-18",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"rows\":[{\"id\":\"C01\",\"问题类型\":\"故障\",\"摘要\":\"手机端导出按钮无反应\"},{\"id\":\"C03\",\"问题类型\":\"功能建议\",\"摘要\":\"建议增加深色模式\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 122,
+    "completion_tokens": 46,
+    "total_tokens": 168,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "service_ttft_ms": 484,
+      "user_visible_ttft_ms": 362,
+      "pre_inference_ms": 123,
+      "service_tbt_ms": 9,
+      "service_ttlt_ms": 903,
+      "engine_ttft_ms": 34,
+      "engine_ttlt_ms": 460,
+      "engine_tbt_ms": 9
+    }
+  },
+  "system_fingerprint": "fp_4b2adf74ff",
+  "service_tier": "default",
+  "routing": {
+    "serving_pipereplica": "d20261021025848-c34ad9a8-default-r0-dp0-default"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "chatcmpl-EfmpZfnjWWAydjZXXaEBUrS3WmX3E",
+  "object": "chat.completion",
+  "created": 1793627861,
+  "model": "gpt-4o-mini-2024-07-18",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"rows\":[{\"id\":\"T01\",\"摘要\":\"客户测试甲，昨天重复扣款，需要核对订单。\"}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 109,
+    "completion_tokens": 26,
+    "total_tokens": 135,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "service_ttft_ms": 397,
+      "user_visible_ttft_ms": 322,
+      "pre_inference_ms": 75,
+      "service_tbt_ms": 13,
+      "service_ttlt_ms": 744,
+      "engine_ttft_ms": 27,
+      "engine_ttlt_ms": 369,
+      "engine_tbt_ms": 13
+    }
+  },
+  "system_fingerprint": "fp_4b2adf74ff",
+  "service_tier": "default",
+  "routing": {
+    "serving_pipereplica": "d20261022020741-170d7393-default-r0-dp0-default"
+  }
+}

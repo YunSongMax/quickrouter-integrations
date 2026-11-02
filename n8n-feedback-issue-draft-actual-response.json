@@ -1,0 +1,49 @@
+{
+  "id": "chatcmpl-Efn3Un09GwqmLdZ8yFkF4l2B6x3O2",
+  "object": "chat.completion",
+  "created": 1793628724,
+  "model": "gpt-4o-mini",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"rows\":[{\"id\":\"F01\",\"标题\":\"合成反馈\",\"复现步骤\":[\"在手机端打开报表\",\"点击导出 CSV\"],\"实际结果\":\"没有下载\",\"待补信息\":[\"浏览器版本\",\"复现频率\",\"错误日志\"]}]}",
+        "refusal": null,
+        "annotations": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 200,
+    "completion_tokens": 56,
+    "total_tokens": 256,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 19,
+      "engine_ttft_ms": 34,
+      "engine_ttlt_ms": 1137,
+      "pre_inference_ms": 88,
+      "service_tbt_ms": 20,
+      "service_ttft_ms": 295,
+      "service_ttlt_ms": 1392,
+      "user_visible_ttft_ms": 206
+    }
+  },
+  "system_fingerprint": "fp_4b2adf74ff",
+  "routing": {
+    "serving_pipereplica": "d20261024035316-6b3aa60f-default-r6-dp0-default"
+  },
+  "service_tier": "default"
+}

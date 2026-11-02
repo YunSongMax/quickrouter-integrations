@@ -1,60 +1,59 @@
-# QuickRouter integrations / 开源接入示例
+# QuickRouter 中文工作流与客户端接入示例
 
-Importable n8n workflows and tested Open WebUI / LibreChat configurations. Start with synthetic data and a short text-model task; inspect the real result before using business data.
+提供可导入的中文 n8n 模板、原生客户端配置、合成输入、截图和真实结果。模板免费，API 按实际用量计费；首次验证保留合成样例。Key 只保存在自己的私密凭据中。
 
-提供可导入的 n8n 工作流、Open WebUI 和 LibreChat 配置。包含真实步骤、原生客户端截图和结果。模板与原创示例代码采用 MIT；QuickRouter API 按实际用量计费。
+## 六个中文业务工作流
 
-## Choose a task / 选择任务
+2026-11-02 在 n8n 2.16.0 原生执行，最终六份成功回执共 **1,099 tokens**，统一使用 gpt-4o-mini，每次 max_tokens=600、stream=false、无自动重试。修订与异常调用另外计费；已记录历史调用 2,569 tokens，不代表完整账单总额。未调用视频、图片、音频或嵌入模型。
 
-| Task | Download | Verified result |
-| --- | --- | --- |
-| PDF invoice → validated CSV | [n8n workflow](n8n-pdf-invoice-to-csv.workflow.json) · [setup](n8n-invoice-README.md) | n8n 2.16.0; HTTP 200; 249 tokens; [two CSV rows](n8n-pdf-invoice-result.csv) |
-| Chinese support-ticket triage | [n8n workflow](n8n-support-triage.workflow.json) | n8n 2.16.0; HTTP 200; [receipt](n8n-support-triage.receipt.json); [CSV](n8n-support-triage.result.csv) |
-| Product translation with SKU/spec validation | [n8n workflow](n8n-product-translation.workflow.json) | n8n 2.16.0; HTTP 200; [receipt](n8n-product-translation.receipt.json); [CSV](n8n-product-translation.result.csv) |
-| Open WebUI text chat | [environment fragment](openwebui.env.example) · [setup](openwebui-README.md) | 0.12.5-slim; QR_OK and billing classification; [receipt](openwebui-text-receipt.json) |
-| LibreChat text chat | [YAML fragment](librechat.yaml) · [setup](librechat-README.md) | v0.8.9-rc1; QR_OK and billing classification; [receipt](librechat-text-receipt.json) |
+| 任务 | 下载与说明 | 最终实测 | 图文教程 |
+| --- | --- | --- | --- |
+| n8n 工单本地脱敏与摘要 | [导入 JSON](n8n-ticket-redaction-workflow.json) · [中文说明](n8n-ticket-redaction-README.md) | 1 条 / 135 tokens · [实际 CSV](n8n-ticket-redaction-actual-result.csv) | [原生截图与步骤](https://quickrouter.ai/integrations/visit/n8n-ticket-redaction/github) |
+| n8n 销售线索字段提取与缺项提醒 | [导入 JSON](n8n-lead-extraction-workflow.json) · [中文说明](n8n-lead-extraction-README.md) | 1 条 / 173 tokens · [实际 CSV](n8n-lead-extraction-actual-result.csv) | [原生截图与步骤](https://quickrouter.ai/integrations/visit/n8n-lead-extraction/github) |
+| n8n 评论精确去重与问题归类 | [导入 JSON](n8n-comment-deduplication-workflow.json) · [中文说明](n8n-comment-deduplication-README.md) | 2 条 / 168 tokens · [实际 CSV](n8n-comment-deduplication-actual-result.csv) | [原生截图与步骤](https://quickrouter.ai/integrations/visit/n8n-comment-deduplication/github) |
+| n8n 中文会议文本转行动清单 | [导入 JSON](n8n-meeting-actions-workflow.json) · [中文说明](n8n-meeting-actions-README.md) | 1 条 / 186 tokens · [实际 CSV](n8n-meeting-actions-actual-result.csv) | [原生截图与步骤](https://quickrouter.ai/integrations/visit/n8n-meeting-actions/github) |
+| n8n 多语言术语一致性检查 | [导入 JSON](n8n-terminology-check-workflow.json) · [中文说明](n8n-terminology-check-README.md) | 2 条 / 181 tokens · [实际 CSV](n8n-terminology-check-actual-result.csv) | [原生截图与步骤](https://quickrouter.ai/integrations/visit/n8n-terminology-check/github) |
+| n8n 用户反馈生成 GitHub Issue 中文草稿 | [导入 JSON](n8n-feedback-issue-draft-workflow.json) · [中文说明](n8n-feedback-issue-draft-README.md) | 1 条 / 256 tokens · [实际 CSV](n8n-feedback-issue-draft-actual-result.csv) | [原生截图与步骤](https://quickrouter.ai/integrations/visit/n8n-feedback-issue-draft/github) |
 
-The PDF and both client results were checked on 2026-11-02. Support and translation receipts are dated 2026-10-27 UTC; they are historical tests, not promises of current availability. LibreChat was tested on a release candidate.
+1. 选择 Import from File 导入工作流。
+2. 在 HTTP Request 选择 Header Auth：Name=Authorization，Value 为 Bearer 加一个空格及自己的 Key。
+3. 执行合成样例，核对绿色节点、字段断言和“需人工确认”列，再下载 CSV。更换输入后同步修改提示词与校验规则。
 
-## n8n quick start / n8n 使用步骤
+精确去重不等于语义聚类；工单仅脱敏邮箱和中国大陆手机号；会议依据必须摘自原文；Issue 仅生成草稿，不自动发布。
 
-1. Import one workflow JSON into a new workflow in your own n8n instance.
-2. Create **HTTP Header Auth**: name `Authorization`; value `Bearer YOUR_QUICKROUTER_KEY` with one space after Bearer. Store your private key in Credentials, never exported JSON.
-3. Select that credential on **QuickRouter text request**. Confirm the `gemini-2.5-flash-lite` model is available to your account and you have API credit.
-4. Keep the included fictional sample and run once. Each valid run sends one bounded text request with no automatic retry.
-5. Inspect **Validate result**, then **Export CSV → Download**. Review output before replying to customers or publishing products; these examples do neither automatically.
+## 两款新增客户端原生验证
 
-The invoice template needs a selectable-text PDF. Scans need separate OCR. Integer-cent checks and formula-safe CSV cells do not replace human review.
+### AnythingLLM
 
-## Native screenshots / 原生截图
+[中文说明](anythingllm-README.md) · [配置样例](anythingllm-quickrouter.env.example) · [实际结果](anythingllm-actual-result.json) · [验证回执](anythingllm-receipt.json) · [图文教程](https://quickrouter.ai/integrations/visit/anythingllm-quickrouter/github)
 
-![n8n PDF extraction](n8n-pdf-extraction.jpg)
-![Open WebUI text results](openwebui-text-result.jpg)
-![LibreChat text results](librechat-text-result.jpg)
+![AnythingLLM 原生中文结果](anythingllm-text-result.jpg)
 
-Connection and model-selection screenshots are also included. Client token estimates and incomplete usage fields are not gateway billing receipts.
+### Flowise
 
-## Guides / 在线教程
+[中文说明](flowise-README.md) · [配置样例](flowise-flowise-text-chatflow.json) · [实际结果](flowise-actual-result.json) · [验证回执](flowise-receipt.json) · [图文教程](https://quickrouter.ai/integrations/visit/flowise-quickrouter/github)
 
-- [PDF invoice workflow and results](https://quickrouter.ai/integrations/visit/n8n-invoice/github)
-- [Open WebUI setup and results](https://quickrouter.ai/integrations/visit/open-webui/github)
-- [LibreChat setup and results](https://quickrouter.ai/integrations/visit/librechat/github)
-- [API documentation](https://doc.quickrouter.ai/)
+![Flowise 原生中文结果](flowise-text-result.jpg)
 
-## Scope, cost and privacy / 范围、费用与隐私
+AnythingLLM 1.19.0：Generic OpenAI、普通聊天模式、空文档工作区；两次成功回话由客户端报告 274 tokens，未独立核对账单。首次代理模式未完成，不计为 Agent 成功。
 
-- Tested with low-cost text models through `https://api.quickrouter.ai/v1`; no video, image or audio model runs are included.
-- Configuration files contain placeholders, not real keys. The samples are synthetic. Never commit `.env`, credentials, private business files or runtime databases.
-- 401: check credentials. 404: check the exact model ID and `/v1`. 429: check balance/access/channel availability before a bounded retry. DNS errors require checking both host and container connectivity.
-- These are original integration examples, not upstream software distributions or official vendor endorsements. RAG, vision, voice, tool calling and general all-model compatibility are untested.
-- Template approval, downloads and stars do not demonstrate successful API use, retention or revenue.
+Flowise 3.1.4：三节点文字 LLM Chain，使用官方支持的隔离 PostgreSQL 17；原生记录无 token 统计，不估算消费。**官方已停止维护，仅供现有部署接入核对，不建议新生产部署。** [官方公告](https://flowiseai.com/sunset)。
 
-## Contribution status / 投稿状态
+两款均验证 QR_OK 和中文账单分类，max_tokens=256、stream=false；未验证知识库、Agent、工具或媒体能力。
 
-The n8n invoice template (#22204) is under human review; the other two have not been submitted. [LibreChat docs PR #904](https://github.com/LibreChat-AI/docs/pull/904) fixes an existing Azure YAML example and is pending maintainer review. It does not add a QuickRouter provider or endorse these examples.
+## 已有工作流和客户端
 
-## Verification / 校验
+- [PDF 发票转 CSV](n8n-pdf-invoice-to-csv.workflow.json) · [说明](n8n-invoice-README.md) · [实际 CSV](n8n-pdf-invoice-result.csv)
+- [客服分类](n8n-support-triage.workflow.json) · [商品翻译](n8n-product-translation.workflow.json)
+- [Open WebUI 配置](openwebui.env.example) · [说明](openwebui-README.md)
+- [LibreChat 配置](librechat.yaml) · [说明](librechat-README.md)
 
-`SHA256SUMS` identifies the original files. Workflow hashes in receipts match their respective JSON downloads. No API request is made by downloading or inspecting the files.
+## 上游贡献和审核状态
 
-Original examples: [MIT](LICENSE). n8n, Open WebUI and LibreChat retain their respective licenses and trademarks. See linked official documentation in the setup guides.
+- n8n 发票模板 #22204 仍在人工审核，后续投稿入口尚未开放；其他模板没有宣称已被官方收录。
+- [LibreChat 文档 PR #904](https://github.com/LibreChat-AI/docs/pull/904)：待维护者审核。
+- [AnythingLLM 文档 PR #319](https://github.com/Mintplex-Labs/anythingllm-docs/pull/319)：说明上下文和输出上限，已提交，待审核；没有新增网关推广链接。上游 Vercel 检查要求维护者授权部署。
+
+## 校验与许可
+
+SHA256SUMS 标识公开文件；回执中的工作流 SHA256 与对应 JSON 一致。下载不发起 API 调用。原创示例采用 MIT；客户端与原项目保留各自商标和许可。Flowise 图结构依据官方随包 LLM Chain 示例和节点 schema，遵循 Apache-2.0；参见 [Flowise 许可](https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md)。

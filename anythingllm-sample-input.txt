@@ -1,0 +1,3 @@
+接入测试：只回复 QR_OK，不要添加其他内容。
+
+把以下合成工单分为 billing、technical、account 或 other。只输出 JSON 对象，字段为 category 和 summary，summary 用中文，不要 Markdown，不调用工具。工单：测试订单发生重复扣款，请核对账单。

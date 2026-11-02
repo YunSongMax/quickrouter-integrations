@@ -1,0 +1,42 @@
+[
+  {
+    "prompt": "接入测试：只回复 QR_OK，不要添加其他内容。",
+    "response": {
+      "text": "QR_OK",
+      "sources": [],
+      "type": "chat",
+      "attachments": [],
+      "metrics": {
+        "prompt_tokens": 91,
+        "completion_tokens": 2,
+        "total_tokens": 93,
+        "duration": 5.418,
+        "outputTps": 0.36913990402362495,
+        "model": "gpt-4o-mini",
+        "provider": "GenericOpenAiLLM",
+        "timestamp": "2026-11-02T14:13:24.743Z"
+      }
+    },
+    "createdAt": 1793628804745
+  },
+  {
+    "prompt": "把以下合成工单分为 billing、technical、account 或 other。只输出 JSON 对象，字段为 category 和 summary，summary 用中文，不要 Markdown，不调用工具。工单：测试订单发生重复扣款，请核对账单。",
+    "response": {
+      "text": "{\n  \"category\": \"billing\",\n  \"summary\": \"测试订单发生重复扣款，请核对账单。\"\n}",
+      "sources": [],
+      "type": "chat",
+      "attachments": [],
+      "metrics": {
+        "prompt_tokens": 154,
+        "completion_tokens": 27,
+        "total_tokens": 181,
+        "duration": 10.665,
+        "outputTps": 2.5316455696202533,
+        "model": "gpt-4o-mini",
+        "provider": "GenericOpenAiLLM",
+        "timestamp": "2026-11-02T14:15:07.019Z"
+      }
+    },
+    "createdAt": 1793628907023
+  }
+]
